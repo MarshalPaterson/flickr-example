@@ -1,24 +1,9 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import {AppRegistry} from 'react-native';
-import {name as appName} from './app.json';
-import PhotoListScreen from './src/screens/PhotoListScreen';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { AppRegistry, YellowBox } from "react-native";
+import App from "./src/App";
+import { name as appName } from "./app.json";
 
-const Stack = createStackNavigator();
+YellowBox.ignoreWarnings(["Warning: ..."]);
 
-// Create a component
-const App = () => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="photoList"
-        component={PhotoListScreen}
-        options={{title: 'Photos'}}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
+console.disableYellowBox = true;
 
 AppRegistry.registerComponent(appName, () => App);

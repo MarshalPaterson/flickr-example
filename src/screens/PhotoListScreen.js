@@ -4,13 +4,16 @@ import axios from 'axios';
 import PhotoDetail from '../components/PhotoDetail';
 import { useEffect } from 'react/cjs/react.development';
 
-const PhotoListScreen = () => {
+// imports inject and observer from 'mobx-react':
+import { inject, observer } from "mobx-react";
 
-  const [photos, setPhotos] = useState([]);
-  const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(15);
+const PhotoListScreen = (props) => {
+  const { total, photos, fetchImages } = props.store;
+  //const [photos, setPhotos] = useState(photos);
+  // const [page, setPage] = useState(1);
+  // const [perPage, setPerPage] = useState(15);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [total, setTotal] = useState(0)
+  //const [total, setTotal] = useState(total)
 
   //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=kittens&format=json&nojsoncallback=1
 
@@ -18,28 +21,28 @@ const PhotoListScreen = () => {
     fetchImages();
   }, []);
 
-  function fetchImages() {
-    axios
-      .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&safe_search=1&per_page=${perPage}&page=${page}`,
-      )
-      .then((response) => {
-        var modified = []
-        if (response.data.photos.photo.length > 0) {
-          modified = response.data.photos.photo.reduce((rows, key, index) => {
-            return (index % 3 === 0 ? rows.push([key])
-              : rows[rows.length - 1].push(key)) && rows;
-          }, []);
+  // function fetchImages() {
+  //   axios
+  //     .get(
+  //       `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&safe_search=1&per_page=${perPage}&page=${page}`,
+  //     )
+  //     .then((response) => {
+  //       var modified = []
+  //       if (response.data.photos.photo.length > 0) {
+  //         modified = response.data.photos.photo.reduce((rows, key, index) => {
+  //           return (index % 3 === 0 ? rows.push([key])
+  //             : rows[rows.length - 1].push(key)) && rows;
+  //         }, []);
 
-        }
+  //       }
 
-        setTotal(response.data.photos.perpage);
-        setPhotos(modified);
-      }
+  //       setTotal(response.data.photos.perpage);
+  //       setPhotos(modified);
+  //     }
 
-      );
-  }
-
+  //     );
+  // }
+ 
   function fetchMoreImages() {
     //setPage(page + 1);
     setPerPage(perPage + 15);
@@ -136,4 +139,5 @@ const styles = {
   }
 };
 
-export default PhotoListScreen;
+// export default PhotoListScreen;
+export default inject("store")(observer(PhotoListScreen));

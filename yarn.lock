@@ -4609,14 +4609,14 @@ mobx-react-lite@^3.2.0:
 
 mobx-react@^7.2.1:
   version "7.2.1"
-  resolved "https://registry.npmjs.org/mobx-react/-/mobx-react-7.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-7.2.1.tgz#e9d4c04dc63d05e1139ce773f5fee7a5b4cb7c78"
   integrity sha512-LZS99KFLn75VWDXPdRJhILzVQ7qLcRjQbzkK+wVs0Qg4kWw5hOI2USp7tmu+9zP9KYsVBmKyx2k/8cTTBfsymw==
   dependencies:
     mobx-react-lite "^3.2.0"
 
 mobx@^6.3.5:
   version "6.3.5"
-  resolved "https://registry.npmjs.org/mobx/-/mobx-6.3.5.tgz"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.3.5.tgz#4464565bf2fa0f74f5dc2e4d6a9713bcee0ddf9c"
   integrity sha512-MeDfqtiSbhVoJgXqQsrJwvq2klj7Xk9pPdMThCdFiwFt33vgWJe82ATppPwVzQoz0AI3QpSSwQzcp3TBDK4syg==
 
 mockdate@^3.0.2:
