@@ -8,7 +8,7 @@ import { useEffect } from 'react/cjs/react.development';
 import { inject, observer } from "mobx-react";
 
 const PhotoListScreen = (props) => {
-  const { total, photos, fetchImages } = props.store;
+  const { total, photos, fetchImages, perPage , getPerPage, setPerPage} = props.store;
   //const [photos, setPhotos] = useState(photos);
   // const [page, setPage] = useState(1);
   // const [perPage, setPerPage] = useState(15);
@@ -22,9 +22,12 @@ const PhotoListScreen = (props) => {
  
   function fetchMoreImages() {
     //setPage(page + 1);
-    setPerPage(perPage + 15);
-    setLoadingMore(true);
-    fetchImages();
+    //setPerPage(perPage + 15);
+   // perPage = perPage + 15;
+   console.log(perPage);  
+    setPerPage(perPage + 15) 
+    setLoadingMore(true); 
+    //fetchImages();     
   }
 
   function renderAlbums() {
