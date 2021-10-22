@@ -27,5 +27,4 @@ const App = () => (
     </Provider>
 );
 
-// AppRegistry.registerComponent(appName, () => App);
 export default App
