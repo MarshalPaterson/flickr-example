@@ -8,6 +8,9 @@ const PhotoList = () => {
 
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(15);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [total, setTotal] = useState(0)
 
   //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=kittens&format=json&nojsoncallback=1
 
@@ -18,7 +21,7 @@ const PhotoList = () => {
   function fetchImages() {
     axios
       .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&page=1`,
+        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&safe_search=1&per_page=${perPage}&page=${page}`,
       )
       .then((response) => {
         var modified = []
@@ -30,15 +33,17 @@ const PhotoList = () => {
 
         }
 
-        setPhotos(modified)
+        setTotal(response.data.photos.perpage);
+        setPhotos(modified);
       }
 
       );
   }
 
   function fetchMoreImages() {
-    var nPage = page + 1;
-    setPage(nPage);
+    //setPage(page + 1);
+    setPerPage(perPage + 15);
+    setLoadingMore(true);
     fetchImages();
   }
 
@@ -77,7 +82,24 @@ const PhotoList = () => {
       <View style={{ flex: 1 }}>
         <FlatList data={photos} onEndReached={() => {
           fetchMoreImages()
-        }} renderItem={() => renderAlbums()} />
+        }} renderItem={() => renderAlbums()}
+        ListHeaderComponent={
+          <View style={styles.header}>
+            <Text style={styles.title}>Displaying {total} Items</Text>
+          </View>
+        }
+        ListFooterComponent={
+          <View style={styles.footer}>
+            {loadingMore &&
+              <Text style={styles.footerText}>Loading More...</Text>
+            }
+          </View>
+        }
+        scrollEventThrottle={250}
+        onEndReached={info => {
+          fetchMoreImages();
+        }}
+        onEndReachedThreshold={0.01} />
       </View>
     );
   }
@@ -87,6 +109,30 @@ const styles = {
   containerStyle: {
     flex: 1,
     flexDirection: "row", // here we are settin row as the flexdirection
+  },
+  header: {
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  list: {
+
+  },
+  item: {
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderColor: '#ccc',
+    width: '100%',
+  },
+  footer: {
+    padding: 15,
+  },
+  footerText: {
+    fontWeight: '600',
   }
 };
 
