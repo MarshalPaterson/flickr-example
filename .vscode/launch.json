@@ -10,43 +10,6 @@
       "type": "reactnative",
       "cwd": "${workspaceFolder}",
       "platform": "ios"
-    },
-
-
-    //   {
-    //     "name": "Debug iOS",
-    //     "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-    //     "type": "reactnative",
-    //     "request": "launch",
-    //     "platform": "ios",
-    //     "sourceMaps": true,
-    //     "outDir": "${workspaceRoot}/.vscode/.react"
-    //   },
-    //   {
-    //     "name": "Attach to packager",
-    //     "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-    //     "type": "reactnative",
-    //     "request": "attach",
-    //     "sourceMaps": true,
-    //     "outDir": "${workspaceRoot}/.vscode/.react"
-    //   },
-    //   {
-    //     "name": "Chrome Attach to packager",
-    //     "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-    //     "type": "chrome",
-    //     "request": "attach",
-    //     "port": 9222,
-    //     "sourceMaps": true,
-    //     "outDir": "${workspaceRoot}/.vscode/.react"
-    //   },
-    //   {
-    //     "name": "Debug in Exponent",
-    //     "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-    //     "type": "reactnative",
-    //     "request": "launch",
-    //     "platform": "exponent",
-    //     "sourceMaps": true,
-    //     "outDir": "${workspaceRoot}/.vscode/.react"
-    //   }
+    }
   ]
 }

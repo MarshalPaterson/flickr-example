@@ -8,7 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "clean": "react-native-clean-project"
+    "clean": "react-native-clean-project",
+    "clearWatchman": "watchman watch-del-all",
+    "clearCache": "npm start --reset-cache"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",

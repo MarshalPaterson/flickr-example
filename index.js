@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import PhotoList from './src/components/PhotoList';
+import PhotoListScreen from './src/screens/PhotoListScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -14,7 +14,7 @@ const App = () => (
     <Stack.Navigator>
       <Stack.Screen
         name="photoList"
-        component={PhotoList}
+        component={PhotoListScreen}
         options={{title: 'Photos'}}
       />
     </Stack.Navigator>
