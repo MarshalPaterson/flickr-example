@@ -19,7 +19,10 @@ const PhotoDetail = ({title, imageUrl}) => {
         <View style={thumbnailContainerStyle}>
           <Image style={thumbnailStyle} source={{uri: imageUrl}} />
         </View>
-        <View style={headerContentStyle}>
+
+      </CardSection>
+      <CardSection>
+      <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
         </View>
       </CardSection>

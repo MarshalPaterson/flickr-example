@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { FlatList, Text, View } from 'react-native';
 import axios from 'axios';
 import PhotoDetail from './PhotoDetail';
@@ -7,13 +7,18 @@ import { useEffect } from 'react/cjs/react.development';
 const PhotoList = () => {
 
   const [photos, setPhotos] = useState([]);
+  const [page, setPage] = useState(1);
 
   //https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=kittens&format=json&nojsoncallback=1
 
   useEffect(() => {
+    fetchImages();
+  })
+
+  function fetchImages() {
     axios
       .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=auto&format=json&nojsoncallback=1&page=2`,
+        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&page=` + {page},
       )
       .then((response) => {
         var modified = []
@@ -29,15 +34,17 @@ const PhotoList = () => {
       }
 
       );
-  })
+  }
+
+  function fetchMoreImages() {
+    var nPage = page + 1;
+    setPage(nPage);
+    fetchImages();
+  }
 
   function renderAlbums() {
     return photos.map((photo) => (
       <View style={styles.containerStyle}>
-
-        {/* <View style={styles.powderblueStyle} />
-<View style={styles.skyblueStyle} />
-<View style={styles.steelblueStyle} /> */}
         {
           photo.map((col) => (
             <PhotoDetail
@@ -62,17 +69,16 @@ const PhotoList = () => {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        <FlatList data={photos} renderItem={() => renderAlbums()} />
+        <FlatList data={photos} onEndReached={fetchImages} renderItem={() => renderAlbums()} />
       </View>
     );
   }
 }
 
-
 const styles = {
   containerStyle: {
     flex: 1,
-    flexDirection: "row" // here we are settin row as the flexdirection
+    flexDirection: "row", // here we are settin row as the flexdirection
   }
 };
 
