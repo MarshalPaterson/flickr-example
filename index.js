@@ -3,8 +3,10 @@ import React from 'react';
 
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import AlbumList from './src/components/AlbumList';
+// import AlbumList from './src/components/AlbumList';
+import HomeScreen from './src/screens/HomeScreen'
 import PhotoList from './src/components/PhotoList';
+import Test from './src/screens/TestingApplication';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -15,9 +17,9 @@ const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
       {/* <Stack.Screen
-        name="albumList"
-        component={AlbumList}
-        options={{title: 'Albums'}}
+        name="home"
+        component={Test}
+        options={{title: 'Home'}}
       /> */}
       <Stack.Screen
         name="photoList"

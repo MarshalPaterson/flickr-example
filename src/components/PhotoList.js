@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import axios from 'axios';
 import PhotoDetail from './PhotoDetail';
 
@@ -11,7 +11,7 @@ class PhotoList extends Component {
   componentWillMount() {
     axios
       .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=kittens&format=json&nojsoncallback=1`,
+        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=auto&format=json&nojsoncallback=1&page=2`,
       )
       .then((response) => {
         var modified = []
@@ -44,7 +44,7 @@ class PhotoList extends Component {
         imageUrl={`https://farm${col.farm}.staticflickr.com/${col.server}/${col.id}_${col.secret}.jpg`}
         style={styles.containerStyle}
       />
-  ))
+  )) 
 }
 
 
@@ -79,7 +79,7 @@ class PhotoList extends Component {
 
     return (
       <View style={{flex: 1}}>
-        <ScrollView>{this.renderAlbums()}</ScrollView>
+        <FlatList data={this.state.photos} renderItem={() => this.renderAlbums()} />
       </View>
     );
   }
