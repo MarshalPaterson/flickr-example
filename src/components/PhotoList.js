@@ -13,12 +13,12 @@ const PhotoList = () => {
 
   useEffect(() => {
     fetchImages();
-  })
+  }, []);
 
   function fetchImages() {
     axios
       .get(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&page=` + {page},
+        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&page=1`,
       )
       .then((response) => {
         var modified = []
@@ -60,6 +60,12 @@ const PhotoList = () => {
     ));
   }
 
+  // return (
+  //   <View style={{ flex: 1 }}>
+  //     <FlatList data={photos} renderItem={() => renderAlbums()} />
+  //   </View>
+  // );
+
   if (!photos) {
     return (
       <View style={{ flex: 1 }}>
@@ -69,7 +75,9 @@ const PhotoList = () => {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        <FlatList data={photos} onEndReached={fetchImages} renderItem={() => renderAlbums()} />
+        <FlatList data={photos} onEndReached={() => {
+          fetchMoreImages()
+        }} renderItem={() => renderAlbums()} />
       </View>
     );
   }

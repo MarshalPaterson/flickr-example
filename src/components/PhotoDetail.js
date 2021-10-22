@@ -2,7 +2,6 @@ import React from 'react';
 import {Text, View, Image, Linking} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
-import Button from './Button';
 
 const PhotoDetail = ({title, imageUrl}) => {
   const {
@@ -42,6 +41,7 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
+    maxWidth: 100
   },
   headerTextStyle: {
     fontSize: 13,
