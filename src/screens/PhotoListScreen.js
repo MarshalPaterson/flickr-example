@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
-import axios from 'axios';
+import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import PhotoDetail from '../components/PhotoDetail';
 import { useEffect } from 'react/cjs/react.development';
 
@@ -42,14 +41,14 @@ const PhotoListScreen = (props) => {
               </View>
             );
           })}
-      </View>
+      </View> 
     )
   }
 
-  if (!photos) {
+  if (photos.length !== 3) {
     return (
-      <View style={{ flex: 1 }}>
-        <Text>Loading...</Text>
+      <View style={[styles.container, styles.horizontal]}>
+        <ActivityIndicator size="large" />
       </View>
     );
   } else {
@@ -81,6 +80,15 @@ const PhotoListScreen = (props) => {
 }
 
 const styles = {
+  container: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  horizontal: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 10
+  },
   containerStyle: {
     flex: 1,
     flexDirection: "row",
