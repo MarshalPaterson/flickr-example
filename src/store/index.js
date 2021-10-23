@@ -1,4 +1,4 @@
-import { extendObservable, makeObservable, decorate, observable, action, computed, runInAction } from "mobx";
+import { makeObservable, observable, action, computed, runInAction } from "mobx";
 import axios from 'axios';
 
 class Store {
@@ -35,7 +35,6 @@ class Store {
           this.setTotal(response.data.photos.perpage);
 
           const gridCols = [[], [], []];
-          const result = [response.data.photos.photo];
 
           response.data.photos.photo.forEach((data, i) => {
             if (i % 3 === 0) {
@@ -48,7 +47,6 @@ class Store {
           });
 
           this.setPhotos([]);
-          console.log(gridCols);
           this.setPhotos(gridCols);
         }
 

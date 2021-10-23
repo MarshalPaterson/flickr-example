@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import PhotoDetail from '../components/PhotoDetail';
-// import { useEffect } from 'react/cjs/react.development';
 
 // imports inject and observer from 'mobx-react':
 import { inject, observer } from "mobx-react";
@@ -22,9 +21,7 @@ const PhotoListScreen = (props) => {
   function renderAlbums() {
     return (
       <View style={styles.containerStyle}>
-
         {
-
           photos.map((items, index) => {
             return (
               <View>
@@ -103,9 +100,6 @@ const styles = {
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center'
-  },
-  list: {
-
   },
   item: {
     paddingHorizontal: 15,

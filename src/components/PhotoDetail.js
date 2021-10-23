@@ -1,28 +1,21 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
 const PhotoDetail = ({ title, imageUrl }) => {
-  const {
-    thumbnailStyle,
-    headerContentStyle,
-    thumbnailContainerStyle,
-    headerTextStyle,
-    imageStyle,
-  } = styles;
 
   return (
     <Card>
       <CardSection>
-        <View style={thumbnailContainerStyle}>
-          <Image style={thumbnailStyle} source={{ uri: imageUrl }} />
+        <View style={styles.thumbnailContainerStyle}>
+          <Image style={styles.thumbnailStyle} source={{ uri: imageUrl }} />
         </View>
 
       </CardSection>
       <CardSection>
-        <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{title}</Text>
+        <View style={styles.headerContentStyle}>
+          <Text style={styles.headerTextStyle}>{title}</Text>
         </View>
       </CardSection>
     </Card>
