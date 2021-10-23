@@ -32,7 +32,7 @@ yarn test
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/UnitTests.png)
 
 
-### React Native is Awesome!!
+# React Native is Awesome!!!
 
-# TODO
+### TODO
 Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing.
