@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import PhotoDetail from '../components/PhotoDetail';
-import { useEffect } from 'react/cjs/react.development';
+// import { useEffect } from 'react/cjs/react.development';
 
 // imports inject and observer from 'mobx-react':
 import { inject, observer } from "mobx-react";
@@ -73,7 +73,8 @@ const PhotoListScreen = (props) => {
           onEndReached={info => {
             fetchMoreImages();
           }}
-          onEndReachedThreshold={0.01} />
+          onEndReachedThreshold={0.01}
+          keyExtractor={item => item.id} />
       </View>
     );
   }
@@ -92,6 +93,7 @@ const styles = {
   containerStyle: {
     flex: 1,
     flexDirection: "row",
+    justifyContent: 'center',
   },
   header: {
     paddingHorizontal: 10,
