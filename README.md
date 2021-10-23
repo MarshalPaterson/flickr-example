@@ -4,12 +4,12 @@
 
 A clean common structure React Native application that calls aFlickr API then uses Mobx as state managent then a FlatList to do infinity scroll, with builds by CircleCI.
 
-![alt text](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
+![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
 # iOS
 CD into ios then Run Pods
 
-![hippo](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
+![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
 
 # Android
 
@@ -23,6 +23,11 @@ yarn run ios
 yarn run android
 
 # Unit Test
+Tests are run with Jest and Enzyme
+
 yarn test
+
+![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/UnitTests.png)
+
 
 ## React Native is Awesome!!
