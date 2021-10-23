@@ -7,6 +7,8 @@ Mobx Statement Managent
 React Native common structure followed
 Clean - KISS
 
+![alt text](http://url/to/img.png)
+
 iOS
 Run Pods
 
