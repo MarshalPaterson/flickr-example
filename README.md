@@ -12,7 +12,7 @@ Clean - KISS
 iOS
 Run Pods
 
-![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+![hippo](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
 
 
 Android
