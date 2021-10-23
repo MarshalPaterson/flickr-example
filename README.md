@@ -2,7 +2,7 @@
 
 # flickr-example
 
-A clean common structure React Native application that calls aFlickr API then uses Mobx as state managent then a FlatList to do infinity scroll.
+A clean common structure React Native application that calls aFlickr API then uses Mobx as state managent then a FlatList to do infinity scroll, with builds by CircleCI.
 
 ![alt text](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
@@ -25,4 +25,4 @@ yarn run android
 # Unit Test
 yarn test
 
-## React Native is Awesome
+## React Native is Awesome!!
