@@ -2,7 +2,7 @@
 
 # flickr-example
 
-A clean common structure React Native application that calls aFlickr API then uses Mobx as state managent then a FlatList to do infinity scroll, with builds by CircleCI.
+A clean common structure React Native application that calls a Flickr API then uses Mobx as state managent then a FlatList to do infinity scroll, with builds by CircleCI.
 
 ![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
@@ -32,4 +32,7 @@ yarn test
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/UnitTests.png)
 
 
-## React Native is Awesome!!
+### React Native is Awesome!!
+
+# TODO
+Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing.
