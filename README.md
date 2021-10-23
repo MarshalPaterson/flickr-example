@@ -18,7 +18,12 @@ Open Android Studio and go to File > Settings > Build, Execution, Development > 
 
 # Install and run
 yarn 
+
 yarn run ios
+
 yarn run android
+
+# Unit Test
+yarn test
 
 ## React Native is Awesome
