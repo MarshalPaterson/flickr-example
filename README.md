@@ -2,8 +2,7 @@
 
 # flickr-example
 
-A Flickr API example that uses Mobx with a common clean structure.
-Clean - KISS
+A clean common structure React Native application that calls aFlickr API then uses Mobx as state managent then a FlatList to do infinity scroll.
 
 ![alt text](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
