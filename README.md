@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main.svg?style=svg)](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main)
+
 # flickr-example
 
 Flickr API example
