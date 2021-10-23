@@ -7,13 +7,15 @@ A clean common structure React Native application that calls aFlickr API then us
 ![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
 # iOS
-CD into ios then Run Pods
+Trouble shooting: Please run 'pod install' the pod file is in 'ios' folder.
 
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
 
 # Android
 
-Open Android Studio and go to File > Settings > Build, Execution, Development > Build Tools > Gradle.
+Trouble shooting: You made to open Android Studio and run ./gradle from the 'android' folder.
+
+![android](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/android.gif)
 
 # Install and run
 yarn 
