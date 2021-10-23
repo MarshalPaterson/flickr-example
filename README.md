@@ -2,26 +2,23 @@
 
 # flickr-example
 
-Flickr API example
-Mobx Statement Managent
-React Native common structure followed
+A Flickr API example that uses Mobx with a common clean structure.
 Clean - KISS
 
 ![alt text](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
-iOS
-Run Pods
+# iOS
+CD into ios then Run Pods
 
 ![hippo](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
 
+# Android
 
-Android
+Open Android Studio and go to File > Settings > Build, Execution, Development > Build Tools > Gradle.
 
-Open Android Studio and go to File > Settings > Build, Execution, Development > Build Tools > Gradle, then change Gradle JDK to jdk16, then click Sync Gradle.
-
+# Install and run
 yarn 
-
 yarn run ios
 yarn run android
 
-React Native is Ausome
+## React Native is Awesome
