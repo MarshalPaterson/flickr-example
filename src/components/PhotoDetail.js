@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, View, Image, Linking} from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
-const PhotoDetail = ({title, imageUrl}) => {
+const PhotoDetail = ({ title, imageUrl }) => {
   const {
     thumbnailStyle,
     headerContentStyle,
@@ -16,23 +16,15 @@ const PhotoDetail = ({title, imageUrl}) => {
     <Card>
       <CardSection>
         <View style={thumbnailContainerStyle}>
-          <Image style={thumbnailStyle} source={{uri: imageUrl}} />
+          <Image style={thumbnailStyle} source={{ uri: imageUrl }} />
         </View>
 
       </CardSection>
       <CardSection>
-      <View style={headerContentStyle}>
+        <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
         </View>
       </CardSection>
-
-      {/* <CardSection>
-        <Image style={imageStyle} source={{uri: imageUrl}} />
-      </CardSection> */}
-
-      {/* <CardSection>
-        <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
-      </CardSection> */}
     </Card>
   );
 };

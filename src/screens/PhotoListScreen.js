@@ -8,26 +8,16 @@ import { useEffect } from 'react/cjs/react.development';
 import { inject, observer } from "mobx-react";
 
 const PhotoListScreen = (props) => {
-  const { total, photos, fetchImages, perPage , getPerPage, setPerPage} = props.store;
-  //const [photos, setPhotos] = useState(photos);
-  // const [page, setPage] = useState(1);
-  // const [perPage, setPerPage] = useState(15);
+  const { total, photos, fetchImages, perPage, getPerPage, setPerPage } = props.store;
   const [loadingMore, setLoadingMore] = useState(false);
-  //const [total, setTotal] = useState(total)
-  
 
   useEffect(() => {
     fetchImages();
   }, []);
- 
+
   function fetchMoreImages() {
-    //setPage(page + 1);
-    //setPerPage(perPage + 15);
-   // perPage = perPage + 15;
-   console.log(perPage);  
-    setPerPage(perPage + 15) 
-    setLoadingMore(true); 
-    //fetchImages();     
+    setPerPage(perPage + 15)
+    setLoadingMore(true);
   }
 
   function renderAlbums() {
@@ -60,23 +50,23 @@ const PhotoListScreen = (props) => {
         <FlatList data={photos} onEndReached={() => {
           fetchMoreImages()
         }} renderItem={() => renderAlbums()}
-        ListHeaderComponent={
-          <View style={styles.header}>
-            <Text style={styles.title}>Displaying {total} Items</Text>
-          </View>
-        }
-        ListFooterComponent={
-          <View style={styles.footer}>
-            {loadingMore &&
-              <Text style={styles.footerText}>Loading More...</Text>
-            }
-          </View>
-        }
-        scrollEventThrottle={250}
-        onEndReached={info => {
-          fetchMoreImages();
-        }}
-        onEndReachedThreshold={0.01} />
+          ListHeaderComponent={
+            <View style={styles.header}>
+              <Text style={styles.title}>Displaying {total} Items</Text>
+            </View>
+          }
+          ListFooterComponent={
+            <View style={styles.footer}>
+              {loadingMore &&
+                <Text style={styles.footerText}>Loading More...</Text>
+              }
+            </View>
+          }
+          scrollEventThrottle={250}
+          onEndReached={info => {
+            fetchMoreImages();
+          }}
+          onEndReachedThreshold={0.01} />
       </View>
     );
   }
@@ -85,7 +75,7 @@ const PhotoListScreen = (props) => {
 const styles = {
   containerStyle: {
     flex: 1,
-    flexDirection: "row", // here we are settin row as the flexdirection
+    flexDirection: "row",
   },
   header: {
     paddingHorizontal: 10,
@@ -116,5 +106,4 @@ const styles = {
   }
 };
 
-// export default PhotoListScreen;
 export default inject("store")(observer(PhotoListScreen));

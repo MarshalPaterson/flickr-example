@@ -1,4 +1,3 @@
-// importing observables and decorate
 import { extendObservable, makeObservable, decorate, observable, action, computed } from "mobx";
 import axios from 'axios';
 
@@ -19,13 +18,11 @@ class Store {
       setPerPageLocal: action,
     })
     this.value = value
-}
-
+  }
 
   // action to call API and search images
   fetchImages = (perPage = 15) => {
     var page = 1;
-  //  var perPage = this.perPage;
 
     axios
       .get(
@@ -36,13 +33,13 @@ class Store {
         if (response.data.photos.photo.length > 0) {
           modified = response.data.photos.photo.reduce((rows, key, index) => {
             return (index % 3 === 0 ? rows.push([key])
-              : rows[rows.length - 1].push(key)) && rows; 
+              : rows[rows.length - 1].push(key)) && rows;
           }, []);
 
         }
 
         this.setTotal(response.data.photos.perpage);
-        this.setPhotos(modified); 
+        this.setPhotos(modified);
       }
 
       );
@@ -50,7 +47,7 @@ class Store {
 
   // observables can be modifies by an action only
   setTotal = (total) => {
-    this.total = total; 
+    this.total = total;
   };
   setPhotos = (photos) => {
     this.photos = photos;
@@ -58,35 +55,15 @@ class Store {
   setPerPageLocal = (perPage) => {
     this.perPage = perPage
   }
-  // setPerPage = (perPage) => {
-  //   this.perPage = perPage;
-  // }
-
-//   increment() {
-//     this.value++
-// }
-// get double() {
-//   return this.value * 2
-// }
-setPerPage = (perPage) => {
-  //extendObservable(this.perPage, perPage);
- this.setPerPageLocal(perPage);
-this.fetchImages(this.perPage);
-}
+  setPerPage = (perPage) => {
+    this.setPerPageLocal(perPage);
+    this.fetchImages(this.perPage);
+  }
 
   get getPerPage() {
     return this.perPage + 15;
   }
 }
-
-// another way to decorate variables with observable
-// decorate(Store, {
-//   total: observable,
-//   photos: observable,
-//   fetchImages: action,
-//   setTotal: action,
-//   setPhotos: action,
-// });
 
 // export class
 export default new Store();
