@@ -21,21 +21,29 @@ const PhotoListScreen = (props) => {
   }
 
   function renderAlbums() {
-    return photos.map((photo) => (
+    return (
       <View style={styles.containerStyle}>
-        {
-          photo.map((col) => (
-            <PhotoDetail
-              key={col.title}
-              title={col.title}
-              imageUrl={`https://farm${col.farm}.staticflickr.com/${col.server}/${col.id}_${col.secret}.jpg`}
-              style={styles.containerStyle}
-            />
-          ))
-        }
-      </View>
 
-    ));
+        {
+
+          photos.map((items, index) => {
+            return (
+              <View>
+                {items.map((subItems, sIndex) => {
+                  return (
+                    <PhotoDetail
+                      key={subItems.id}
+                      title={subItems.title}
+                      imageUrl={`https://farm${subItems.farm}.staticflickr.com/${subItems.server}/${subItems.id}_${subItems.secret}.jpg`}
+                      style={styles.containerStyle}
+                    />
+                  )
+                })}
+              </View>
+            );
+          })}
+      </View>
+    )
   }
 
   if (!photos) {

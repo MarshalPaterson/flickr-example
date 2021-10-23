@@ -1,4 +1,4 @@
-import { extendObservable, makeObservable, decorate, observable, action, computed } from "mobx";
+import { extendObservable, makeObservable, decorate, observable, action, computed, runInAction } from "mobx";
 import axios from 'axios';
 
 class Store {
@@ -16,6 +16,7 @@ class Store {
       getPerPage: computed,
       setPerPage: action,
       setPerPageLocal: action,
+      setPhotos: action
     })
     this.value = value
   }
@@ -29,17 +30,40 @@ class Store {
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&safe_search=1&per_page=${perPage}&page=${page}`,
       )
       .then((response) => {
-        var modified = []
-        if (response.data.photos.photo.length > 0) {
-          modified = response.data.photos.photo.reduce((rows, key, index) => {
-            return (index % 3 === 0 ? rows.push([key])
-              : rows[rows.length - 1].push(key)) && rows;
-          }, []);
 
+        runInAction(() => {
+          this.setTotal(response.data.photos.perpage);
+
+          const gridCols = [[], [], []];
+          const result = [response.data.photos.photo];
+
+          response.data.photos.photo.forEach((data, i) => {
+            if (i % 3 === 0) {
+              gridCols[2].push(data);
+            } else if (i % 2 === 0) {
+              gridCols[1].push(data);
+            } else {
+              gridCols[0].push(data);
+            }
+          });
+
+          this.setPhotos([]);
+          console.log(gridCols);
+          this.setPhotos(gridCols);
         }
 
-        this.setTotal(response.data.photos.perpage);
-        this.setPhotos(modified);
+        )
+
+        // var modified = []
+        // if (response.data.photos.photo.length > 0) {
+        //   modified = response.data.photos.photo.reduce((rows, key, index) => {
+        //     return (index % 3 === 0 ? rows.push([key])
+        //       : rows[rows.length - 1].push(key)) && rows;
+        //   }, []);
+
+        // }
+
+
       }
 
       );
@@ -63,6 +87,7 @@ class Store {
   get getPerPage() {
     return this.perPage + 15;
   }
+
 }
 
 // export class
