@@ -53,17 +53,6 @@ class Store {
         }
 
         )
-
-        // var modified = []
-        // if (response.data.photos.photo.length > 0) {
-        //   modified = response.data.photos.photo.reduce((rows, key, index) => {
-        //     return (index % 3 === 0 ? rows.push([key])
-        //       : rows[rows.length - 1].push(key)) && rows;
-        //   }, []);
-
-        // }
-
-
       }
 
       );
