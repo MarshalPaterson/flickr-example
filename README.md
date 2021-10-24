@@ -32,7 +32,7 @@ yarn test
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/UnitTests.png)
 
 # MobX Walkthrough
-For statemanagent Mobx has been implemented, more at https://mobx.js.org/README.html
+For state managent MobX has been implemented, more at https://mobx.js.org/README.html
 
 * App.js has the Provider with store
 * Inject and observer for Photo List Screen
