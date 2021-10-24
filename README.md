@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main.svg?style=svg)](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main)
+[![CircleCI](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main.svg?style=svg)](https://circleci.com/gh/MarshalPaterson/flickr-example/tree/main) https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 
 # flickr-example
 
@@ -42,13 +42,10 @@ For state managent MobX has been implemented, more at https://mobx.js.org/README
 
 ![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.png)
 
-# Builds are at:
-Android: flickr -> android -> app -> release -> app-release.apk
-
 # React Native is Awesome!!!
 
 ### TODO
-Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Consider: https://github.com/yamill/react-native-orientation
+Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Consider: https://github.com/yamill/react-native-orientation. Also on Android on some devices needs more padding.
 
 ### Security options
 For best practices on React Native security please review, this would need to be added.
@@ -59,3 +56,7 @@ https://www.appsealing.com/react-native-security/
 
 ### Other Considerations
 For this demo Javascript was chosen though Typescript would also be great to use.
+
+https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white https://www.linkedin.com/in/mpaterson/
+
+![React Native Australia](https://media-exp1.licdn.com/dms/image/C5107AQGdkqfacGal1g/group-logo_image-shrink_92x92/0/1631004853641?e=1635202800&v=beta&t=Hh_DGogeu-AMb3xv90J0XUX1pk5tzi06ep3wQjKnlg0) https://www.linkedin.com/groups/13532424/

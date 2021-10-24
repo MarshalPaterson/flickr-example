@@ -26,14 +26,14 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
-    maxWidth: 100
+    width: 90,
   },
   headerTextStyle: {
     fontSize: 13,
   },
   thumbnailStyle: {
-    height: 87,
-    width: 87,
+    height: 67,
+    width: 67,
     borderRadius: 6
   },
   thumbnailContainerStyle: {
