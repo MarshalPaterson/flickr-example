@@ -2,7 +2,7 @@
 
 # flickr-example
 
-A clean common structure React Native application that calls a Flickr API then uses Mobx as state managent follow the Observer pattern then a FlatList to do infinity scroll, a Functional Components have been implemented with builds by CircleCI.
+A clean common structure React Native application that calls a Flickr API then uses Mobx as state management follow the Observer pattern then a FlatList to do infinity scroll, a Functional Components have been implemented with builds by CircleCI.
 
 ![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
@@ -34,13 +34,13 @@ yarn test
 # MobX Walkthrough
 For statemanagent Mobx has been implemented, more at https://mobx.js.org/README.html
 
-1. App.js has the Provider with store
-2. Inject and observer for Photo List Screen
-3. MobX store is in the store folder
+* App.js has the Provider with store
+* Inject and observer for Photo List Screen
+* MobX store is in the store folder
 
 # Folder Structure
 
-![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.gif)
+![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.png)
 
 # Builds are at:
 
