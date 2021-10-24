@@ -7,13 +7,13 @@ A clean common structure React Native application that calls a Flickr API then u
 ![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
 # iOS
-Trouble shooting: Please run 'pod install' the pod file is in 'ios' folder.
+Trouble shooting: Please run 'pod install' the pod file is in 'ios' folder. Archive release has been tested and is working.
 
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/ios.gif)
 
 # Android
 
-Trouble shooting: You made to open Android Studio and run ./gradle from the 'android' folder.
+Trouble shooting: You made to open Android Studio and run ./gradle from the 'android' folder. Release build has been tested and is working.
 
 ![android](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/android.gif)
 
