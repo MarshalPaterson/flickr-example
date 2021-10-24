@@ -8,7 +8,7 @@ class Store {
   photos = [];
   perPage = 15;
 
-  constructor(value) {
+  constructor() {
     makeObservable(this, {
       perPage: observable,
       photos: observable,
@@ -18,7 +18,6 @@ class Store {
       setPerPageLocal: action,
       setPhotos: action
     })
-    this.value = value
   }
 
   // action to call API and search images

@@ -2,7 +2,7 @@
 
 # flickr-example
 
-A clean common structure React Native application that calls a Flickr API then uses Mobx as state managent then a FlatList to do infinity scroll, with builds by CircleCI.
+A clean common structure React Native application that calls a Flickr API then uses Mobx as state managent follow the Observer pattern then a FlatList to do infinity scroll, a Functional Components have been implemented with builds by CircleCI.
 
 ![sd](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/SolutionDesign.drawio.png)
 
@@ -31,8 +31,27 @@ yarn test
 
 ![ios](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/UnitTests.png)
 
+# MobX Walkthrough
+For statemanagent Mobx has been implemented, more at https://mobx.js.org/README.html
+
+1. App.js has the Provider with store
+2. Inject and observer for Photo List Screen
+3. MobX store is in the store folder
+
+# Folder Structure
+
+![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.gif)
+
+# Builds are at:
 
 # React Native is Awesome!!!
 
 ### TODO
 Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing.
+
+### Security options
+For best practices on React Native security please review, this would need to be added.
+
+https://hackernoon.com/how-to-build-a-secure-mobile-application-with-react-native-jz2s34k6
+
+https://www.appsealing.com/react-native-security/
