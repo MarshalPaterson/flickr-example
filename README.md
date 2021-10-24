@@ -43,11 +43,12 @@ For state managent MobX has been implemented, more at https://mobx.js.org/README
 ![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.png)
 
 # Builds are at:
+Android: flickr -> android -> app -> release -> app-release.apk
 
 # React Native is Awesome!!!
 
 ### TODO
-Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing.
+Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Consider: https://github.com/yamill/react-native-orientation
 
 ### Security options
 For best practices on React Native security please review, this would need to be added.
@@ -55,3 +56,6 @@ For best practices on React Native security please review, this would need to be
 https://hackernoon.com/how-to-build-a-secure-mobile-application-with-react-native-jz2s34k6
 
 https://www.appsealing.com/react-native-security/
+
+### Other Considerations
+For this demo Javascript was chosen though Typescript would also be great to use.

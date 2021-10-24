@@ -50,7 +50,7 @@ const PhotoListScreen = (props) => {
     );
   } else {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingLeft: 4, paddingRight: 4 }}>
         <FlatList data={photos} onEndReached={() => {
           fetchMoreImages()
         }} renderItem={() => renderAlbums()}
@@ -71,7 +71,7 @@ const PhotoListScreen = (props) => {
             fetchMoreImages();
           }}
           onEndReachedThreshold={0.01}
-          keyExtractor={item => item.id} />
+          keyExtractor={(item, index) => 'item'+index}  />
       </View>
     );
   }
@@ -91,6 +91,7 @@ const styles = {
     flex: 1,
     flexDirection: "row",
     justifyContent: 'center',
+    paddingVertical: 4
   },
   header: {
     paddingHorizontal: 10,

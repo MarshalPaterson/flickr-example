@@ -8,15 +8,22 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "clean": "react-native-clean-project",
+    "cleanProject": "react-native-clean-project",
     "clearWatchman": "watchman watch-del-all",
-    "clearCache": "npm start --reset-cache"
+    "clearCache": "npm start --reset-cache",
+    "clean": "rimraf build",
+    "copyassets": "copyfiles  -u 1 src/assets/*.* build/",
+    "build": "yarn clean && yarn copyassets",
+    "releaseiOS": "react-native bundle --dev false --entry-file index.js --bundle-output ios/main.jsbundle --platform ios",
+    "releaseAndroid" : "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
+
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "axios": "^0.21.1",
+    "copyfiles": "^2.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-15": "^1.4.3",
     "enzyme-adapter-react-16": "^1.15.6",
