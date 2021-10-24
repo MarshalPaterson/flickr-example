@@ -45,7 +45,7 @@ For state managent MobX has been implemented, more at https://mobx.js.org/README
 # React Native is Awesome!!!
 
 ### TODO
-Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Consider: https://github.com/yamill/react-native-orientation. Also on Android on some devices needs more padding.
+Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Consider: https://github.com/yamill/react-native-orientation. Also do a deep dive on any 'security vulnerabilities'.
 
 ### Security options
 For best practices on React Native security please review, this would need to be added.
