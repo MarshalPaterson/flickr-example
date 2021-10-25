@@ -46,10 +46,7 @@ For state managent MobX has been implemented, more at https://mobx.js.org/README
 # Lint
 So in most cases lint has been run against the code and has passed.
 
-`code()`
 yarn lint
-`code()`
-
 
 # React Native is Awesome!!!
 
