@@ -1,15 +1,14 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import {Text, View, Image} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
-const PhotoDetail = ({ title, imageUrl }) => {
-
+const PhotoDetail = ({title, imageUrl}) => {
   return (
     <Card>
       <CardSection>
         <View style={styles.thumbnailContainerStyle}>
-          <Image style={styles.thumbnailStyle} source={{ uri: imageUrl }} />
+          <Image style={styles.thumbnailStyle} source={{uri: imageUrl}} />
         </View>
       </CardSection>
       <CardSection>

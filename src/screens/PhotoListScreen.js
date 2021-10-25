@@ -18,28 +18,28 @@ const PhotoListScreen = (props) => {
   }
 
   function renderAlbums() {
-    return (
-      <View style={styles.containerStyle}>
-        {
+    return (<View style={styles.containerStyle}>
+      {
           photos.map((items) => {
-            return (
-              <View>
-                {items.map((subItems, sIndex) => {
-                  return (
-                    <PhotoDetail
+            return (<View>
+              {
+                items.map((subItems, sIndex) => {
+                  return (<PhotoDetail
                       key={sIndex}
                       title={subItems.title}
                       imageUrl={`https://farm${subItems.farm}.staticflickr.com/${subItems.server}/${subItems.id}_${subItems.secret}.jpg`}
                       style={styles.containerStyle}
                     />
                   )
-                })}
+                })
+              }
               </View>
             );
-          })}
+          })
+      }
       </View> 
-    )
-  };
+    );
+  }
 
   if (photos.length !== 3) {
     return (
@@ -49,7 +49,7 @@ const PhotoListScreen = (props) => {
     );
   } else {
     return (
-      <View style={{flex: 1, paddingLeft: 4, paddingRight: 4}}>
+      <View style={{ flex: 1, paddingLeft: 4, paddingRight: 4 }}>
         <FlatList data={photos} 
           renderItem={() => renderAlbums()}
           ListHeaderComponent={
@@ -59,9 +59,9 @@ const PhotoListScreen = (props) => {
           }
           ListFooterComponent={
             <View style={styles.footer}>
-              {loadingMore &&
+              {(loadingMore && 
                 <Text style={styles.footerText}>Loading More...</Text>
-              }
+              )}
             </View>
           }
           scrollEventThrottle={250}
@@ -69,7 +69,8 @@ const PhotoListScreen = (props) => {
             fetchMoreImages();
           }}
           onEndReachedThreshold={0.01}
-          keyExtractor={(index) => 'item' + index}  />
+          keyExtractor={(index) => 'item' + index}
+        />
       </View>
     );
   }

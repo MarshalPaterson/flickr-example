@@ -3,7 +3,6 @@ import React from 'react';
 import PhotoListScreen from './screens/PhotoListScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 // imports Provider and store
 import { Provider } from 'mobx-react';
 import store from './store';
@@ -24,5 +23,4 @@ const App = () => (
         </NavigationContainer>
     </Provider>
 );
-
-export default App
+export default App;

@@ -43,10 +43,15 @@ For state managent MobX has been implemented, more at https://mobx.js.org/README
 
 ![folder structure](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/folders.png)
 
+# Lint
+So in most cases lint has been run against the code
+
+yarn lint
+
 # React Native is Awesome!!!
 
 ### TODO
-Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Please consider: https://github.com/yamill/react-native-orientation. Also do a deep dive on any 'security vulnerabilities'.
+Screen Orientation on iOS is working, though Styles sheets need to change. On Android not changing. Please consider: https://github.com/yamill/react-native-orientation. Also do a deep dive on any 'security vulnerabilities'. More work is needed on formatting to follow the 'Lint' rules.
 
 ### Security options
 For best practices on React Native security please review, this would need to be added.
