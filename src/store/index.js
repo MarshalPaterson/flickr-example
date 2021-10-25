@@ -1,8 +1,7 @@
-import { makeObservable, observable, action, computed, runInAction } from "mobx";
+import {makeObservable, observable, action, computed, runInAction} from 'mobx';
 import axios from 'axios';
 
 class Store {
-
   // observable to save image response from api
   total = 0;
   photos = [];
@@ -16,8 +15,8 @@ class Store {
       getPerPage: computed,
       setPerPage: action,
       setPerPageLocal: action,
-      setPhotos: action
-    })
+      setPhotos: action,
+    });
   }
 
   // action to call API and search images
@@ -29,7 +28,6 @@ class Store {
         `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=96358825614a5d3b1a1c3fd87fca2b47&text=plants&format=json&nojsoncallback=1&safe_search=1&per_page=${perPage}&page=${page}`,
       )
       .then((response) => {
-
         runInAction(() => {
           this.setTotal(response.data.photos.perpage);
 
@@ -47,13 +45,9 @@ class Store {
 
           this.setPhotos([]);
           this.setPhotos(gridCols);
-        }
-
-        )
-      }
-
-      );
-  }
+        });
+      });
+  };
 
   // observables can be modifies by an action only
   setTotal = (total) => {
@@ -63,17 +57,15 @@ class Store {
     this.photos = photos;
   };
   setPerPageLocal = (perPage) => {
-    this.perPage = perPage
-  }
+    this.perPage = perPage;
+  };
   setPerPage = (perPage) => {
     this.setPerPageLocal(perPage);
     this.fetchImages(this.perPage);
-  }
-
+  };
   get getPerPage() {
     return this.perPage + 15;
   }
-
 }
 
 // export class

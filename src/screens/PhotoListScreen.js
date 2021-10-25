@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import PhotoDetail from '../components/PhotoDetail';
-
 // imports inject and observer from 'mobx-react':
-import { inject, observer } from "mobx-react";
+import {inject, observer} from 'mobx-react';
 
 const PhotoListScreen = (props) => {
-  const { total, photos, fetchImages, perPage, getPerPage, setPerPage } = props.store;
+  const {total, photos, fetchImages, perPage, setPerPage} = props.store;
   const [loadingMore, setLoadingMore] = useState(false);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const PhotoListScreen = (props) => {
   }, []);
 
   function fetchMoreImages() {
-    setPerPage(perPage + 15)
+    setPerPage(perPage + 15);
     setLoadingMore(true);
   }
 
@@ -22,13 +21,13 @@ const PhotoListScreen = (props) => {
     return (
       <View style={styles.containerStyle}>
         {
-          photos.map((items, index) => {
+          photos.map((items) => {
             return (
               <View>
                 {items.map((subItems, sIndex) => {
                   return (
                     <PhotoDetail
-                      key={subItems.id}
+                      key={sIndex}
                       title={subItems.title}
                       imageUrl={`https://farm${subItems.farm}.staticflickr.com/${subItems.server}/${subItems.id}_${subItems.secret}.jpg`}
                       style={styles.containerStyle}
@@ -40,7 +39,7 @@ const PhotoListScreen = (props) => {
           })}
       </View> 
     )
-  }
+  };
 
   if (photos.length !== 3) {
     return (
@@ -50,10 +49,9 @@ const PhotoListScreen = (props) => {
     );
   } else {
     return (
-      <View style={{ flex: 1, paddingLeft: 4, paddingRight: 4 }}>
-        <FlatList data={photos} onEndReached={() => {
-          fetchMoreImages()
-        }} renderItem={() => renderAlbums()}
+      <View style={{flex: 1, paddingLeft: 4, paddingRight: 4}}>
+        <FlatList data={photos} 
+          renderItem={() => renderAlbums()}
           ListHeaderComponent={
             <View style={styles.header}>
               <Text style={styles.title}>Displaying {total} Items</Text>
@@ -67,31 +65,31 @@ const PhotoListScreen = (props) => {
             </View>
           }
           scrollEventThrottle={250}
-          onEndReached={info => {
+          onEndReached={() => {
             fetchMoreImages();
           }}
           onEndReachedThreshold={0.01}
-          keyExtractor={(item, index) => 'item'+index}  />
+          keyExtractor={(index) => 'item' + index}  />
       </View>
     );
   }
-}
+};
 
 const styles = {
   container: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: 'center',
   },
   horizontal: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 10
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
   },
   containerStyle: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
     justifyContent: 'center',
-    paddingVertical: 4
+    paddingVertical: 4,
   },
   header: {
     paddingHorizontal: 10,
@@ -100,7 +98,7 @@ const styles = {
   title: {
     fontSize: 16,
     fontWeight: '600',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   item: {
     paddingHorizontal: 15,
@@ -115,8 +113,8 @@ const styles = {
   footerText: {
     fontWeight: '600',
     padding: 6,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 };
 
-export default inject("store")(observer(PhotoListScreen));
+export default inject('store')(observer(PhotoListScreen));

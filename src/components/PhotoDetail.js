@@ -11,7 +11,6 @@ const PhotoDetail = ({ title, imageUrl }) => {
         <View style={styles.thumbnailContainerStyle}>
           <Image style={styles.thumbnailStyle} source={{ uri: imageUrl }} />
         </View>
-
       </CardSection>
       <CardSection>
         <View style={styles.headerContentStyle}>
@@ -34,14 +33,14 @@ const styles = {
   thumbnailStyle: {
     height: 67,
     width: 67,
-    borderRadius: 6
+    borderRadius: 6,
   },
   thumbnailContainerStyle: {
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 10,
     marginRight: 10,
-    borderRadius: 9
+    borderRadius: 9,
   },
   imageStyle: {
     height: 300,

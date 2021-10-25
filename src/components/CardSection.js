@@ -18,7 +18,7 @@ const styles = {
     flexDirection: 'row',
     borderColor: '#ddd',
     position: 'relative',
-    maxWidth: '31%'
+    maxWidth: '31%',
   }
 };
 

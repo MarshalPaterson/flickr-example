@@ -1,19 +1,19 @@
-import Enzyme from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React, { useState } from 'react';
 import store, { Store } from "../src/store";
 import { Provider } from 'mobx-react';
 
-Enzyme.configure({ adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() });
 
-import PhotoListScreen from '../src/screens/PhotoListScreen'
+import PhotoListScreen from '../src/screens/PhotoListScreen';
 
-import { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'enzyme';
 
 describe('Test case for Screens, Provider and Store.', () => {
 
   it('Screen with provider is not null', () => {
-    const wrap = shallow(<Provider Store={{ Store }}><PhotoListScreen name='photolistscreen' /></Provider>)
+    const wrap = shallow(<Provider Store={{ Store }}><PhotoListScreen name='photolistscreen' /></Provider>);
     expect(wrap).not.toBeNull();
   })
 
@@ -31,6 +31,6 @@ describe('Test case for Screens, Provider and Store.', () => {
 
   test('Set Total and check if set ok', async () => {
     store.setTotal(4);
-    expect(store.total).toBe(4)
+    expect(store.total).toBe(4);
   });
 });
