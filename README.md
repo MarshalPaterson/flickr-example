@@ -65,4 +65,4 @@ For this demo Javascript was chosen though Typescript would also be great to use
 
 ![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) https://www.linkedin.com/in/mpaterson/
 
-![React Native Australia](https://media-exp1.licdn.com/dms/image/C5107AQGdkqfacGal1g/group-logo_image-shrink_92x92/0/1631004853641?e=1635202800&v=beta&t=Hh_DGogeu-AMb3xv90J0XUX1pk5tzi06ep3wQjKnlg0) https://www.linkedin.com/groups/13532424/
+![React Native Australia](https://github.com/MarshalPaterson/flickr-example/blob/main/SolutionDesign/rna.jpeg) https://www.linkedin.com/groups/13532424/
